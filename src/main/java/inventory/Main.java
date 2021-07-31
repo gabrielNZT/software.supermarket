@@ -11,8 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Data data = new Data();
-        Register run = new Register();
-        Product product = new Product();
+        Product product;
 
          System.out.println("Programa de estocagem...");
 
@@ -22,18 +21,14 @@ public class Main {
              if (first) {
 
                  first = false;
-                 product = run.register();
-                 data.addProduct(product);
-
-
+                 data.addProduct(new Product());
              } else {
 
              System.out.println("[1] Cadastrar\n[2] Remover\n[3] Pesquisar\n[4] Atualizar cadastro\n[5] Mostrar todos os produtos\n[6] Sair");
                  int option = input.nextInt();
              switch (option) {
                  case 1:
-                     product = run.register();
-                     data.addProduct(product);
+                     data.addProduct(new Product());
                      break;
                  case 2:
                      System.out.println("Informe o nome do produto a ser removido:");
